@@ -1,14 +1,13 @@
 import "./form-input.styles.scss";
 
-const FormInput = ({ label, inputOptions }) => {
+const FormInput = ({ label, ...otherProps }) => {
   return (
     <div className='group'>
-      <input className='form-input' {...inputOptions} />
+      <input className='form-input' {...otherProps} />
       {label && (
         <label
-          htmlFor={inputOptions.id}
           className={`${
-            inputOptions.value.length ? "shrink" : ""
+            otherProps.value.length ? "shrink" : ""
           } form-input-label`}
         >
           {label}
